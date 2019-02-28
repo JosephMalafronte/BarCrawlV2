@@ -215,10 +215,11 @@ h6{
 	font-size:16px;
 }
 h2.page_title{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight:bold;
 width:94%;
 font-size:20px;
 line-height:25px;
-font-weight:300;
 padding:20px 0 15px 0;
 margin:0px 3% 15px 3%;
 border-bottom:1px #f0f0f0 solid;
@@ -254,7 +255,7 @@ letter-spacing:-0.5px;
 /* 4. HEADER AND HEADER NAVIGATION */
 /*===============================================*/
 .navbar{
-width:94%;
+width:95%;
 padding:0 3%;
 height:70px;
 display:flex;
@@ -339,10 +340,11 @@ box-shadow:         0px 0px 4px 0px #303030;
 /*===============================================*/
 .btn{
 display: inline-block;
-color: #fff;
+color: black;
+font-weight: bold;
 background-color: #4f40f1;
 background: -webkit-linear-gradient(60deg, #4f40f1, #6100bc);
-background: linear-gradient(60deg, #4f40f1, #6100bc);
+background: linear-gradient(60deg, #F2C843, #F2C843);
 -webkit-border-radius: 20px;
 -moz-border-radius: 20px;
 border-radius: 20px;
@@ -1238,6 +1240,7 @@ padding:0 0 5px 0;
 margin:0px;
 }
 
+
 /* Messages */
 
 .messages{
@@ -1689,7 +1692,8 @@ padding:0;
 margin:0px;
 }
 ul.shop_items li .shop_item_details h4 a{
-color:#2a3452;
+color:black;
+font-size: 18px;
 }
 ul.shop_items li .shop_item_details{
 width:65%;
@@ -3158,9 +3162,10 @@ width: 85%;
 
 
 h2.page_title{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight:bold;
 font-size:16px;
 line-height:25px;
-font-weight:400;
 padding:5px 0;
 }
 
