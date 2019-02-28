@@ -19,6 +19,7 @@
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='js/knockout-3.5.0.js'></script>
 
 </head>
 <body id="mobile_wrap">
@@ -145,85 +146,22 @@
      <h2 class="page_title" style="text-align: center;"></h2>
       
 	<div class="page_single layout_fullwidth_padding">
-      
-      <ul class="shop_items">
+
+      <ul class="shop_items" data-bind="foreach: barCards">
       
         <!-- BAR CARD -->
         <li id="barCard">
-        <div class="shop_thumb"><a href="shop-item.html"><img src="images/barPics/galletes.png" alt="" title="" /></a></div>
+        <div class="shop_thumb"><a href="shop-item.html"><img data-bind="attr: { src: barPictureUrl }" alt="" title="" /></a></div>
         <div class="shop_item_details">
-        <h4>Galletes</h4>
+        <h4 data-bind="text: barName">Galletes</h4>
         <ul class="features_list" style="padding: 4% 0 0 0;">
-        <li><span class="features_list_span"><img src="images/icons/black/wine.png" alt="" title="" /><span class="features_list_span_text">$5 Wine Bottles</span></span></li>
+        <li><span class="features_list_span"><img src="images/icons/black/wine.png" alt="" title="" /><span class="features_list_span_text" data-bind="text: highlight1"></span></span></li>
         <li ><span class="features_list_span"><img src="images/icons/black/groupBeer.png" alt="" title="" /><span class="features_list_span_text">$3 12oz Beers</span></span></li>
         </ul>
         <span class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></span>
         </div>
         </li> 
 
-
-        <li>
-        <div class="shop_thumb"><a href="shop-item.html"><img src="images/barPics/galletes.png" alt="" title="" /></a></div>
-        <div class="shop_item_details">
-        <h4>Galletes</h4>
-        <ul class="features_list" style="padding: 4% 0 0 0;">
-            <li><span class="features_list_span"><img src="images/icons/black/wine.png" alt="" title="" /><span class="features_list_span_text">$5 Wine Bottles</span></span></li>
-            <li ><span class="features_list_span"><img src="images/icons/black/groupBeer.png" alt="" title="" /><span class="features_list_span_text">$3 Dollar Beers</span></span></li>
-        </ul>
-        <span class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></span>
-        </div>
-        </li> 
-          
-          <li>
-          <div class="shop_thumb"><a href="shop-item.html"><img src="images/photos/photo3.jpg" alt="" title="" /></a></div>
-          <div class="shop_item_details">
-          <h4><a href="shop-item.html">Summer T-Shirt</a></h4>
-          <div class="shop_item_price">$1200</div>
-            <div class="item_qnty_shop">
-                <form id="myform" method="POST" action="#">
-                    <input type="button" value="-" class="qntyminusshop" field="quantity3" />
-                    <input type="text" name="quantity3" value="1" class="qntyshop" />
-                    <input type="button" value="+" class="qntyplusshop" field="quantity3" />
-                </form>
-            </div>
-          <a href="cart.html" class="btn btn--cart">ADD TO CART</a>
-          <a href="#" data-popup=".popup-social" class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></a>
-          </div>
-          </li>   
-          
-          <li>
-          <div class="shop_thumb"><a href="shop-item.html"><img src="images/photos/photo4.jpg" alt="" title="" /></a></div>
-          <div class="shop_item_details">
-          <h4><a href="shop-item.html">Valentines Gift</a></h4>
-          <div class="shop_item_price">$175</div>
-            <div class="item_qnty_shop">
-                <form id="myform" method="POST" action="#">
-                    <input type="button" value="-" class="qntyminusshop" field="quantity4" />
-                    <input type="text" name="quantity4" value="1" class="qntyshop" />
-                    <input type="button" value="+" class="qntyplusshop" field="quantity4" />
-                </form>
-            </div>
-          <a href="cart.html" class="btn btn--cart">ADD TO CART</a>
-          <a href="#" data-popup=".popup-social" class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></a>
-          </div>
-          </li>
-          
-          <li>
-          <div class="shop_thumb"><a href="shop-item.html"><img src="images/photos/photo5.jpg" alt="" title="" /></a></div>
-          <div class="shop_item_details">
-          <h4><a href="shop-item.html">Rocket Toy</a></h4>
-          <div class="shop_item_price">$435</div>
-            <div class="item_qnty_shop">
-                <form id="myform" method="POST" action="#">
-                    <input type="button" value="-" class="qntyminusshop" field="quantity5" />
-                    <input type="text" name="quantity5" value="1" class="qntyshop" />
-                    <input type="button" value="+" class="qntyplusshop" field="quantity5" />
-                </form>
-            </div>
-          <a href="cart.html" class="btn btn--cart">ADD TO CART</a>
-          <a href="#" data-popup=".popup-social" class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></a>
-          </div>
-          </li> 
           
       </ul>
       
@@ -275,7 +213,21 @@
 
     
 
-<script src="CustomJS/index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB0p2lalH4H-gxCUY_hmJi4kh-01MwoLqs",
+    authDomain: "barcrawlv01.firebaseapp.com",
+    databaseURL: "https://barcrawlv01.firebaseio.com",
+    projectId: "barcrawlv01",
+    storageBucket: "barcrawlv01.appspot.com",
+    messagingSenderId: "742879583749"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type ="module" src="CustomJS/index.js"></script>
 
 
 <script src="js/jquery-3.3.1.min.js"></script>
