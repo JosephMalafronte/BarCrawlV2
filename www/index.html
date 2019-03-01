@@ -10,6 +10,7 @@
 <title>BarCrawl</title>
 <link rel="stylesheet" href="css/swiper.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CustomCSS/index.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet"> 
 
 <style>
@@ -141,45 +142,54 @@
             
         </div>
      
-     <div id="pages_maincontent">
-      
-     <h2 class="page_title" style="text-align: center;"></h2>
-      
-	<div class="page_single layout_fullwidth_padding">
 
-      <ul class="shop_items" data-bind="foreach: barCards">
-      
-        <!-- BAR CARD -->
-        <li id="barCard">
-        <div class="shop_thumb"><a href="shop-item.html"><img data-bind="attr: { src: barPictureUrl }" alt="" title="" /></a></div>
-        <div class="shop_item_details">
-        <h4 data-bind="text: barName">Galletes</h4>
-        <ul class="features_list" style="padding: 4% 0 0 0;">
-        <li><span class="features_list_span"><img src="images/icons/black/wine.png" alt="" title="" /><span class="features_list_span_text" data-bind="text: highlight1"></span></span></li>
-        <li ><span class="features_list_span"><img src="images/icons/black/groupBeer.png" alt="" title="" /><span class="features_list_span_text">$3 12oz Beers</span></span></li>
-        </ul>
-        <span class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></span>
-        </div>
-        </li> 
+  <!-- Page Loader -->
+  <div class="centered" id="pageLoader">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  </div>
+  
 
+
+
+  <!-- Main Content of Page       -->
+  <div id="pages_maincontent" class="hiddenPage">
+      <h2 class="page_title" style="text-align: center;"></h2>
+      
+      <div class="page_single layout_fullwidth_padding">
+
+          <ul class="shop_items" data-bind="foreach: barCards">
           
-      </ul>
-      
-          <div class="shop_pagination">
-          <a href="shop.html" class="prev_shop">PREV PAGE</a>
-          <span class="shop_pagenr">1/37</span>
-          <a href="shop-page2.html" class="next_shop">NEXT PAGE</a>
-          <br />
-          <br />
-          <br />
-          <br />
+            <!-- BAR CARD -->
+            <li id="barCard">
+            <div class="shop_thumb"><a href="shop-item.html"><img data-bind="attr: { src: barPictureUrl }" alt="" title="" class="barCardPic" /></a></div>
+            <div class="shop_item_details">
+            <h4 data-bind="text: barName">Galletes</h4>
+            <ul class="features_list" style="padding: 4% 0 0 0;">
+            <li><span class="features_list_span"><img src="images/icons/black/wine.png" alt="" title="" /><span class="features_list_span_text" data-bind="text: highlight1"></span></span></li>
+            <li ><span class="features_list_span"><img src="images/icons/black/groupBeer.png" alt="" title="" /><span class="features_list_span_text">$3 12oz Beers</span></span></li>
+            </ul>
+            <span class="open-popup shopfav"><img src="images/icons/black/love.png" alt="" title="" /></span>
+            </div>
+            </li> 
+
+              
+          </ul>
+          
+              <div class="shop_pagination">
+              <a href="shop.html" class="prev_shop">PREV PAGE</a>
+              <span class="shop_pagenr">1/37</span>
+              <a href="shop-page2.html" class="next_shop">NEXT PAGE</a>
+              <br />
+              <br />
+              <br />
+              <br />
+              </div>
+          
+              
+          
           </div>
-      
           
-      
-      </div>
-      
-      </div>
+          </div>
 
       <!--       NAVBAR       -->
 		 <div class="swiper-container-toolbar swiper-toolbar" style="background-color:black;">
