@@ -43,23 +43,13 @@ function AppViewModel () {
         var barCardInsert = new barCard(data.barName);
         barCardInsert.barPictureUrl = data.barPictureUrl;
         barCardInsert.highlight1 = data.highlight1;
+        barCardInsert.highlight2 = data.highlight2;
+        barCardInsert.highlight1Icon = data.highlight1Icon;
+        barCardInsert.highlight2Icon = data.highlight2Icon;
         self.barCards.push(barCardInsert);
       });
-      createOA();
+      checkPageLoad();
     });
-
-    function createOA() {
-        barCards.forEach(function(element) {
-            console.log(element.barPictureUrl);
-            var insert = {
-                barName: element.barName,
-                barPictureUrl: element.barPictureUrl,
-                highlight1: element.highlight1
-            }
-            barCardsOA.push(insert);
-        });
-        checkPageLoad();
-    }
 
     //Goes through each image and applies function on load
     function checkPageLoad() {
