@@ -17,9 +17,14 @@ $(document).ready(function(){
     
  });
 
-$("#barCard").click(function (){
-    window.location.replace("/shop.html");
-});
+
+//  Declare Click Activities
+    $("#barCard").click(function (){
+        window.location.replace("/shop.html");
+    });
+    $("#toolbarSearch").click(function (){
+        window.location.replace("/shop.html");
+    });
 
 function AppViewModel () {
     var self = this;
@@ -27,7 +32,6 @@ function AppViewModel () {
     var totalLoads = 2;
     var currentLoads = 0;
 
-    var barCards = [];
     var barCardsOA = [];
 
     var dayOfTheWeek = "Wednesday";

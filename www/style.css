@@ -981,6 +981,21 @@ float:left;
 height:auto;
 text-align:center;
 }
+.toolbar-icon-span{
+  display:block;
+  width:20%;
+  margin:0;
+  padding:1% 0;
+  float:left;
+  height:auto;
+  text-align:center;
+}
+.toolbar-icon-span img{
+  display:block;
+  max-width:30%;
+  margin:0 auto 0 auto;
+  text-align:center;
+  }
 .toolbar-icon a img{
 display:block;
 max-width:30%;
