@@ -44,8 +44,40 @@ Template:	Mobili - Mobile HTML Template
 /*===============================================*/
 /* 2. GENERAL		 						 */
 /*===============================================*/	
+*::-moz-selection
+{
+    background-color:transparent;
+}
+*
+{        
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}    
+input[type="text"], textarea, [contenteditable]
+{
+
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
 html,
 body {
+-webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+
+/* Rules below not implemented in browsers yet */
+-o-user-select: none;
+user-select: none;
+
 position: relative;
 height: 100%;
 width: 100%;
@@ -859,6 +891,18 @@ bottom: 0px;
 overflow: scroll; 
 -webkit-overflow-scrolling: touch;
 }
+#slider_maincontent{
+  width:100%;
+  padding:0 0 100px 0;
+  margin:0px;
+  position: absolute; 
+  top: 0px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0px;
+  overflow: scroll; 
+  -webkit-overflow-scrolling: touch;
+  }
 #pages_maincontent.pages_maincontent--conversation{
 bottom: 60px;
 }
@@ -1736,7 +1780,7 @@ ul.shop_items li a.shopfav{
 position:absolute;
 top:0px;
 right:3px;
-z-index:9999;
+z-index:5;
 width:25px;
 }
 
@@ -1744,7 +1788,7 @@ ul.shop_items li span.shopfav{
   position:absolute;
   top:0px;
   right:3px;
-  z-index:9999;
+  z-index:5;
   width:25px;
   }
 

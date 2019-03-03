@@ -6,6 +6,7 @@ var database = firebase.database();
 
 var baseUrl = "";
 
+var sliderPage = false;
 
 
 $(document).ready(function(){
@@ -14,27 +15,36 @@ $(document).ready(function(){
     var getUrl = window.location;
     baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
-    
- });
 
-
-//  Declare Click Activities
+    //  Declare Click Activities
     $("#barCard").click(function (){
         window.location.replace("/shop.html");
+    });
+    $("#toolbarHome").click(function (){
+        if(sliderPage = true){
+            $(".slideInPage").animate({left: '100%'});
+            sliderPage = false;
+        }
     });
     $("#toolbarSearch").click(function (){
         window.location.replace("/shop.html");
     });
 
+    
+ });
+
+
+
 function AppViewModel () {
     var self = this;
 
-    var totalLoads = 2;
+    var totalLoads = 6;
     var currentLoads = 0;
 
     var barCardsOA = [];
 
     var dayOfTheWeek = "Wednesday";
+
 
     
 
@@ -45,6 +55,7 @@ function AppViewModel () {
       snapshot.forEach(function(child) {
         var data = child.val();
         var barCardInsert = new barCard(data.barName);
+        barCardInsert.barId = data.barId;
         barCardInsert.barPictureUrl = data.barPictureUrl;
         barCardInsert.highlight1 = data.highlight1;
         barCardInsert.highlight2 = data.highlight2;
@@ -60,7 +71,7 @@ function AppViewModel () {
         $('.barCardPic').each(function() {
             $(this).on('load', function () {
                 currentLoads++;
-                if(currentLoads == totalLoads){
+                if(currentLoads >= self.barCards.length){
                     console.log("Images Loaded");
                     $('#pages_maincontent').removeClass('hiddenPage');
                     $('#pageLoader').addClass('centered-hidden');
@@ -70,7 +81,16 @@ function AppViewModel () {
     }
     
     self.barCards = ko.observableArray(barCardsOA);
- 
+
+
+    //Function called on barCard click. This = barCard object
+    self.openBarPage = function () {
+        sliderPage = true;
+        $(".slideInPage").animate({left: '0%'});
+        console.log(this.barId);
+    }
+
+    
 }
 
 ko.applyBindings(new AppViewModel());
