@@ -210,7 +210,7 @@
           <ul class="shop_items" data-bind="foreach: barCards">
           
             <!-- BAR CARD -->
-            <li id="barCard" data-bind="click: $parent.openBarPage">
+            <li id="barCard" data-bind="attr: {id: barName}" >
             <div class="shop_thumb"><img data-bind="attr: { src: barPictureUrl }" alt="" title="" class="barCardPic" /></div>
             <div class="shop_item_details">
             <h4 data-bind="text: barName">Galletes</h4>
@@ -279,12 +279,14 @@
   firebase.initializeApp(config);
 </script>
 
-<script type ="module" src="CustomJS/index.js"></script>
 
 
+
+<script type='application/javascript' src='./js/fastclick.js'></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.validate.min.js" ></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.custom.js"></script>
+<script type ="module" src="CustomJS/index.js"></script>
   </body>
 </html>
