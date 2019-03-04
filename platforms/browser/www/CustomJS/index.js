@@ -45,7 +45,10 @@ $(document).ready(function(){
 function closeBarPage () {
     $(".slideInPage").animate({left: '100%'});
     $(".slideCentered").animate({left: '150%'});
-    $(".slideCentered-hidden").animate({left: '150%'});
+    $(".slideCentered-hidden").animate({left: '150%'},function () {
+        $('#slider_maincontent').addClass('hiddenPage');
+    });
+    
 }
 
 
@@ -79,22 +82,28 @@ function AppViewModel () {
         barCardInsert.highlight2 = data.highlight2;
         barCardInsert.highlight1Icon = data.highlight1Icon;
         barCardInsert.highlight2Icon = data.highlight2Icon;
+        barCardInsert.likeButtonId = data.barName + "likeButton";
         self.barCards.push(barCardInsert);
 
 
         //FastClick setup
         var barCardClick = document.getElementById(data.barName);
         FastClick.attach(barCardClick);
-    
         barCardClick.addEventListener('click', function(event) {
-            console.log(data.barId);
+            console.log(event);
+
+            //If like button is clicked
+            if(event.target.id == barCardInsert.likeButtonId){
+                self.likeButtonHit(data.barId);
+                return;
+            } 
+
+            //else
             if(sliderPage === false){
                 self.openBarPage(data.barId);
                 sliderPage = true;
             }
         }, false);
-
-
 
       });
       checkPageLoad();
@@ -126,12 +135,15 @@ function AppViewModel () {
         $(".slideCentered-hidden").animate({left: '50%'});
 
         $('#barPageImage1').on('load', function () {
-            $('#slideLoader').addClass('slideCentered-hidden').removeClass('slideCentered');
-            $('#slider_maincontent').removeClass('hiddenPage');
+            setTimeout(function (){
+                $('#slideLoader').addClass('slideCentered-hidden').removeClass('slideCentered');
+                $('#slider_maincontent').removeClass('hiddenPage');
+            },300);
+            
         }).each(function(){
             //Just here to trigger load if image is cache. 
             //Does not actually redownload image just calls function
-            if(this.complete) {
+            if(this.complete) { 
               $(this).trigger('load');
             }
         });
@@ -150,6 +162,10 @@ function AppViewModel () {
         
     }
 
+
+    self.likeButtonHit = function (barId) {
+        console.log("barIdHit");
+    }
     
 
     
