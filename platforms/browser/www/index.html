@@ -151,13 +151,21 @@
 
   <!-- SlideInPage -->
   <div class="slideInPage">
-    <div id="slider_maincontent">
+
+
+    <!-- Page Loader -->
+    <div class="slideCentered-hidden" id="slideLoader">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+    <div id="slider_maincontent" class="hiddenPage">
       
-        <h2 class="page_title">MOBILE PERFECTION</h2>
+        <h2 class="page_title" data-bind="text: barPageName"></h2>
             
             <ul id="imageGallery">
                 <li data-thumb="img/thumb/cS-1.jpg" data-src="img/largeImage.jpg">
-                  <img src="./images/barPics/galletesPage1.jpg" width="100%" />
+                  <img data-bind="attr: { src: barPageImage1Url }" width="100%" id="barPageImage1" />
                 </li>
               </ul>
             

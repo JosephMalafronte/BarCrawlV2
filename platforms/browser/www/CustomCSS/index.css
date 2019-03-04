@@ -12,6 +12,24 @@
   transform: translate(-50%, -50%);
 }
 
+.slideCentered {
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.slideCentered-hidden {
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+
 .centered-hidden {
   display:none;
   position: fixed;

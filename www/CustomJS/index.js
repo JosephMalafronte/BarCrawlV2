@@ -1,6 +1,7 @@
 
 import barCard from '../Models/barCard.js';
-
+import barPage from '../Models/barPage.js';
+import barPageO from '../Models/barPageO.js';
 
 
 var database = firebase.database();
@@ -9,6 +10,7 @@ var baseUrl = "";
 
 var sliderPage = false;
 
+var barPageSlider = new barPageO();
 
 
 $(document).ready(function(){
@@ -20,39 +22,48 @@ $(document).ready(function(){
 
 
     //FastClick Activities
-    var toolbarHome = document.getElementById("toolbarHome");
-    FastClick.attach(toolbarHome);
-    toolbarHome.addEventListener('click', function(event) {
-        if(sliderPage == true){
-            $(".slideInPage").animate({left: '100%'});
-            sliderPage = false;
-        }
-    }, false);
+        var toolbarHome = document.getElementById("toolbarHome");
+        FastClick.attach(toolbarHome);
+        toolbarHome.addEventListener('click', function(event) {
+            if(sliderPage == true){
+                closeBarPage();
+                sliderPage = false;
+            }
+        }, false);
 
-    var toolbarSearch = document.getElementById("toolbarSearch");
-    FastClick.attach(toolbarSearch);
-    toolbarSearch.addEventListener('click', function(event) {
-        window.location.href = "shop.html";
-    }, false);
+        var toolbarSearch = document.getElementById("toolbarSearch");
+        FastClick.attach(toolbarSearch);
+        toolbarSearch.addEventListener('click', function(event) {
+            window.location.href = "shop.html";
+        }, false);
 
     
 
     
  });
 
+function closeBarPage () {
+    $(".slideInPage").animate({left: '100%'});
+    $(".slideCentered").animate({left: '150%'});
+    $(".slideCentered-hidden").animate({left: '150%'});
+}
+
 
 
 function AppViewModel () {
     var self = this;
 
+    //Initial Variables
     var totalLoads = 6;
     var currentLoads = 0;
-
     var barCardsOA = [];
-
     var dayOfTheWeek = "Wednesday";
 
 
+    //Declare barPageSlider Variables
+    self.barPageName = ko.observable("");
+    self.barPageId = ko.observable(0);
+    self.barPageImage1Url = ko.observable("");
     
 
     //Database Get Bar Cards
@@ -78,7 +89,7 @@ function AppViewModel () {
         barCardClick.addEventListener('click', function(event) {
             console.log(data.barId);
             if(sliderPage === false){
-                $(".slideInPage").animate({left: '0%'});
+                self.openBarPage(data.barId);
                 sliderPage = true;
             }
         }, false);
@@ -107,13 +118,39 @@ function AppViewModel () {
 
 
 
-    //Function called on barCard click. This = barCard object
-    self.openBarPage = function () {
-
-        sliderPage = true;
+    //Function called on barCard click. 
+    self.openBarPage = function (barId) {
+        $('#slideLoader').addClass('slideCentered').removeClass('slideCentered-hidden');
         $(".slideInPage").animate({left: '0%'});
-        console.log(this.barId);
+        $(".slideCentered").animate({left: '50%'});
+        $(".slideCentered-hidden").animate({left: '50%'});
+
+        $('#barPageImage1').on('load', function () {
+            $('#slideLoader').addClass('slideCentered-hidden').removeClass('slideCentered');
+            $('#slider_maincontent').removeClass('hiddenPage');
+        }).each(function(){
+            //Just here to trigger load if image is cache. 
+            //Does not actually redownload image just calls function
+            if(this.complete) {
+              $(this).trigger('load');
+            }
+        });
+
+
+
+        var urlRefBarPage = rootRef.child("barPages/" + barId.toString());
+        urlRefBarPage.once("value", function (snapshot) {
+            var data = snapshot.val();
+            self.barPageName(data.barName);
+            self.barPageId(data.barId);
+            self.barPageImage1Url(data.barPicture1Url);
+
+            console.log(data);
+        });
+        
     }
+
+    
 
     
 }
