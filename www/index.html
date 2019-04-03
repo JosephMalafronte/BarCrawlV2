@@ -149,6 +149,8 @@
   </div>
   
 
+
+
   <!-- SlideInPage -->
   <div class="slideInPage">
 
@@ -171,22 +173,18 @@
             
             <div class="page_single layout_fullwidth_padding">	
                 
-                        <blockquote>
+                        <blockquote style="display:none">
                         This mobile template that can be used to create a mobile website, a mobile web app, or even a native mobile app. The design is using a full width layout that works perfectly on tablets and desktop also. <span>SINDEVO.COM</span>
                         </blockquote>
                         
-                        <h3>Short features list</h3>   
-                        <ul class="features_list">
-                <li><a href="features.html"><img src="images/icons/black/electronics.png" alt="" title="" /><span>For all devices</span></a></li>
-                <li><a href="shop.html"><img src="images/icons/black/shop.png" alt="" title="" /><span>Shop pages</span></a></li>
-                            <li><a href="#" data-panel="right" class="open-panel"><img src="images/icons/black/users.png" alt="" title="" /><span>User friendly</span></a></li>
-                            <li><a href="photos.html"><img src="images/icons/black/photos.png" alt="" title="" /><span>Photo gallery</span></a></li>
-                            <li><a href="blog.html"><img src="images/icons/black/blog.png" alt="" title="" /><span>Blog layout</span></a></li>  
-                            <li><a href="contact.html"><img src="images/icons/black/contact.png" alt="" title="" /><span>Contact form</span></a></li>
-                            <li><a href="tabs.html"><img src="images/icons/black/tabs.png" alt="" title="" /><span>Responsive tabs</span></a></li>
-                            <li><a href="Toggle.html"><img src="images/icons/black/toggle.png" alt="" title="" /><span>Toggles</span></a></li>	  
-                            <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/black/love.png" alt="" title="" /><span>Social share</span></a></li>
-                        </ul>
+
+                        <!-- BAR DEALS -->
+                        <div class="barDealsSection">
+                          <h3 style="padding: 0 0 0 0;"><span data-bind="text: weekDay"></span> Deals & Features</h3>   
+                          <ul class="features_list" data-bind="foreach: barDeals" style="padding: 20px 0 0 0;">
+                              <li><span class="features_list_span"><img data-bind="attr: { src: dealIcon }" alt="" title="" /><span class="features_list_span_text" data-bind="text: dealDetail"></span></span></li>      
+                          </ul>
+                        </div>
                         
                         <a href="features.html" class="btn btn--full">VIEW ALL FEATURES</a>
 
@@ -247,29 +245,36 @@
           
           </div>
           
-          </div>
+  </div>
 
-      <!--       NAVBAR       -->
-		 <div class="swiper-container-toolbar swiper-toolbar" style="background-color:black;">
-			<div class="swiper-pagination-toolbar"></div>
-			<div class="swiper-wrapper">
-			  <div class="swiper-slide toolbar-icon">
-				<span class="toolbar-icon-span" id="toolbarHome"><img src="images/icons/white/categories.png" style="filter: contrast(0%);"alt="" title=""/></span>
-				<span class="toolbar-icon-span" id="toolbarSearch"><img src="images/icons/white/search.png" alt="" title="" /></span>
-        <span class="toolbar-icon-span"><img src="images/icons/white/love.png" alt="" title="" /></span>
-				<span class="toolbar-icon-span"><img src="images/icons/white/photos.png" alt="" title="" /></span>
-				<span class="toolbar-icon-span"><img src="images/icons/white/contact.png" alt="" title="" /></span>
-			  </div> 
-			</div>
+
+
+
+
+
+  <!--       NAVBAR       -->
+  <div class="swiper-container-toolbar swiper-toolbar" style="background-color:black;">
+    <div class="swiper-pagination-toolbar"></div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide toolbar-icon">
+      <span class="toolbar-icon-span" id="toolbarHome"><img src="images/icons/white/categories.png" style="filter: contrast(0%);"alt="" title=""/></span>
+      <span class="toolbar-icon-span" id="toolbarSearch"><img src="images/icons/white/search.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/love.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/photos.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/contact.png" alt="" title="" /></span>
+      </div> 
+      </div>
+  </div>
+      
+      
+
+
+
           </div>
-      
-      
+        </div>  
     </div>
   </div>
 </div>
-
-         </div>
-    </div>
 
     
 
