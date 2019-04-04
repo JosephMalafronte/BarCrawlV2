@@ -156,6 +156,20 @@ function AppViewModel () {
             self.barPageId(data.barId);
             self.barPageImage1Url(data.barPicture1Url);
 
+            $('#barPageImage1').on('load', function () {
+                setTimeout(function (){
+                    $('#slideLoader').addClass('slideCentered-hidden').removeClass('slideCentered');
+                    $('#slider_maincontent').removeClass('hiddenPage');
+                },700);
+                
+            }).each(function(){
+                //Just here to trigger load if image is cache. 
+                //Does not actually redownload image just calls function
+                if(this.complete) { 
+                  $(this).trigger('load');
+                }
+            });
+
             loadDeals(data.barName);
         });
 
@@ -168,19 +182,7 @@ function AppViewModel () {
             });
         }
 
-        $('#barPageImage1').on('load', function () {
-            setTimeout(function (){
-                $('#slideLoader').addClass('slideCentered-hidden').removeClass('slideCentered');
-                $('#slider_maincontent').removeClass('hiddenPage');
-            },700);
-            
-        }).each(function(){
-            //Just here to trigger load if image is cache. 
-            //Does not actually redownload image just calls function
-            if(this.complete) { 
-              $(this).trigger('load');
-            }
-        });
+        
 
         
     }

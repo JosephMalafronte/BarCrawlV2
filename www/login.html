@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
+<title>BarCrawl</title>
+<link rel="stylesheet" href="css/swiper.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet"> 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='js/knockout-3.5.0.js'></script>
+
+</head>
+<body id="mobile_wrap">
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+                  <!-- Slider -->
+                 <div class="swiper-container-subnav multinav">
+                    <div class="swiper-wrapper">
+			<div class="swiper-slide">		
+				<nav class="main_nav_underline">
+				<ul>
+				<li><a href="index.html"><img src="images/icons/gray/home.png" alt="" title="" /><span>Home</span></a></li>
+				<li><a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a></li>
+				<li><a href="features.html"><img src="images/icons/gray/features.png" alt="" title="" /><span>Features</span></a></li>
+				
+				<li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a></li>
+				<li><a href="team.html"><img src="images/icons/gray/users.png" alt="" title="" /><span>Team</span></a></li>
+				<li><a href="blog.html"><img src="images/icons/gray/blog.png" alt="" title="" /><span>Blog</span></a></li>		
+
+				<li><a href="photos.html"><img src="images/icons/gray/photos.png" alt="" title="" /><span>Photos</span></a></li>
+				<li><a href="videos.html"><img src="images/icons/gray/video.png" alt="" title="" /><span>Videos</span></a></li>
+				<li><a href="music.html"><img src="images/icons/gray/music.png" alt="" title="" /><span>Music</span></a></li>
+				
+				<li><a href="shop.html"><img src="images/icons/gray/shop.png" alt="" title="" /><span>Shop</span></a></li>
+				<li class="subnav opensubnav"><img src="images/icons/gray/categories.png" alt="" title="" /><span>Sub level menu</span></li>
+				<li><a href="cart.html"><img src="images/icons/gray/cart.png" alt="" title="" /><span>Cart</span></a></li>
+				
+				<li><a href="tables.html"><img src="images/icons/gray/tables.png" alt="" title="" /><span>Tables</span></a></li>
+				
+				<li><a href="form.html"><img src="images/icons/gray/form.png" alt="" title="" /><span>Custom Form</span></a></li>
+				
+				
+				<li><a href="tel:012345678"><img src="images/icons/gray/phone.png" alt="" title="" /><span>Call now!</span></a></li>
+				<li><a href="contact.html"><img src="images/icons/gray/contact.png" alt="" title="" /><span>Contact</span></a></li>
+				</ul>
+				</nav>
+			</div>	
+			<div class="swiper-slide">		
+				<div class="subnav_header backtonav"><img src="images/icons/gray/back.png" alt="" title="" /><span>BACK TO MAIN MENU</span></div>
+				<nav class="main_nav_underline">
+				<ul>
+
+				<li><a href="shop.html"><img src="images/icons/gray/car.png" alt="" title="" /><span>Cars</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/bus.png" alt="" title="" /><span>Buses</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/bike.png" alt="" title="" /><span>Bikes</span></a></li>
+				
+				<li><a href="shop.html"><img src="images/icons/gray/drink.png" alt="" title="" /><span>Drinks</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/food.png" alt="" title="" /><span>Food</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/orders.png" alt="" title="" /><span>Clothes</span></a></li>
+				
+				<li><a href="shop.html"><img src="images/icons/gray/rocket.png" alt="" title="" /><span>Rockets</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/briefcase.png" alt="" title="" /><span>Accessories</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/gift.png" alt="" title="" /><span>Gifts</span></a></li>
+				<li class="subnav opensubsubnav"><img src="images/icons/gray/categories.png" alt="" title="" /><span>Third sublevel menu</span></li>
+				</ul>
+				</nav>
+			</div>
+			<div class="swiper-slide">		
+				<div class="subnav_header backtosubnav"><img src="images/icons/gray/back.png" alt="" title="" /><span>BACK TO 2 SUBLEVEL MENU</span></div>
+				<nav class="main_nav_underline">
+				<ul>
+
+				<li><a href="shop.html"><img src="images/icons/gray/car.png" alt="" title="" /><span>Subcategory 01</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/bus.png" alt="" title="" /><span>Subcategory 02</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/bike.png" alt="" title="" /><span>Subcategory 03</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/drink.png" alt="" title="" /><span>Subcategory 04</span></a></li>
+				<li><a href="shop.html"><img src="images/icons/gray/food.png" alt="" title="" /><span>Subcategory 05</span></a></li>
+
+				
+				</ul>
+				</nav>
+			</div>
+		    </div>
+		</div>
+    </div>
+
+    <div class="panel panel-right panel-reveal">
+      <div class="user_login_info">
+	  
+                <div class="user_thumb">
+           
+                  <div class="user_details">
+                   <p>Welcome, <span>Nathalie</span></p>
+                  </div>  
+                  <div class="user_avatar"><img src="images/avatar3.jpg" alt="" title="" /></div>       
+                </div>
+				
+                  <nav class="user-nav">
+                    <ul>
+                      <li><a href="features.html"><img src="images/icons/gray/settings.png" alt="" title="" /><span>Account Settings</span></a></li>
+                      <li><a href="features.html"><img src="images/icons/gray/briefcase.png" alt="" title="" /><span>My Account</span></a></li>
+                      <li><a href="features.html"><img src="images/icons/gray/message.png" alt="" title="" /><span>Messages</span><strong>12</strong></a></li>
+                      <li><a href="features.html"><img src="images/icons/gray/love.png" alt="" title="" /><span>Favorites</span><strong>5</strong></a></li>
+                      <li><a href="index.html"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Logout</span></a></li>
+                    </ul>
+                  </nav>
+      </div>
+    </div>
+
+    <div class="views">
+
+      <div class="view view-main">
+<div class="pages">
+  <div data-page="shop" class="page">
+    <div class="page-content">
+    
+		<div class="navbar navbar--fixed navbar--fixed-top navbar--bg" style="background-color:black;">
+            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                <a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/menu.png" alt="" title="" /></a>
+            </div>
+			<div class="navbar__col navbar__col--title">
+				<a href="index.html"><img src="images/TextLogo.png" width="150px" style="padding-top:16px;"></a>
+			</div>
+			<div class="navbar__col navbar__col--icon navbar__col--icon-right" style="padding-right:7px;">
+				<a href="#" data-panel="right" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a>
+            </div>
+            
+        </div>
+     
+
+  <!-- Page Loader -->
+  <div class="centered" id="pageLoader">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  </div>
+  
+
+
+
+  <!-- SlideInPage -->
+  <div class="slideInPage">
+
+
+    <!-- Page Loader -->
+    <div class="slideCentered-hidden" id="slideLoader">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+    <div id="slider_maincontent" class="hiddenPage">
+      
+        <h2 class="page_title_slide" data-bind="text: barPageName"></h2>
+            
+            <ul id="imageGallery">
+                <li data-thumb="img/thumb/cS-1.jpg" data-src="img/largeImage.jpg">
+                  <img data-bind="attr: { src: barPageImage1Url }" width="100%" id="barPageImage1" />
+                </li>
+              </ul>
+            
+            <div class="page_single layout_fullwidth_padding">	
+                
+                        <blockquote style="display:none">
+                        This mobile template that can be used to create a mobile website, a mobile web app, or even a native mobile app. The design is using a full width layout that works perfectly on tablets and desktop also. <span>SINDEVO.COM</span>
+                        </blockquote>
+                        
+
+                        <!-- BAR DEALS -->
+                        <div class="barDealsSection">
+                          <h3 style="padding: 0 0 0 0;"><span data-bind="text: weekDay"></span> Deals & Features</h3>   
+                          <ul class="features_list" data-bind="foreach: barDeals" style="padding: 20px 0 0 0;">
+                              <li><span class="features_list_span"><img data-bind="attr: { src: dealIcon }" alt="" title="" /><span class="features_list_span_text" data-bind="text: dealDetail"></span></span></li>      
+                          </ul>
+                        </div>
+                        
+                        <a href="features.html" class="btn btn--full">VIEW ALL FEATURES</a>
+
+                        <h4>You can use this mobile template for:</h4>
+                        <ul class="simple_list">
+                        <li>Creating a mobile website</li>
+                        <li>Creating a mobile web app</li>
+                        <li>Creating a mobile native app (integrated with solutions like phonegap or cordova)</li>
+                        <li>Works perfectly on tablets and desktop also</li>
+                        </ul>
+                        
+                        
+                        <a href="http://themeforest.net/user/sindevo" class="btn btn--full">BUY IT NOW!</a>
+                        
+                        
+                </div>
+                
+        </div>
+    </div>
+    
+
+
+  <!-- Main Content of Page       -->
+  <div id="pages_maincontent" class="hiddenPage">
+      <h2 class="page_title" style="text-align: center;"></h2>
+      
+      <div class="page_single layout_fullwidth_padding">
+
+          <ul class="shop_items" data-bind="foreach: barCards">
+          
+            <!-- BAR CARD -->
+            <li id="barCard" data-bind="attr: {id: barName}" >
+            <div class="shop_thumb"><img data-bind="attr: { src: barPictureUrl }" alt="" title="" class="barCardPic" /></div>
+            <div class="shop_item_details">
+            <h4 data-bind="text: barName">Galletes</h4>
+            <ul class="features_list" style="padding: 4% 0 0 0;">
+            <li><span class="features_list_span"><img data-bind="attr: { src: highlight1Icon }" alt="" title="" /><span class="features_list_span_text" data-bind="text: highlight1"></span></span></li>
+            <li><span class="features_list_span"><img data-bind="attr: { src: highlight2Icon }" alt="" title="" /><span class="features_list_span_text" data-bind="text: highlight2"></span></span></li>
+            </ul>
+            <span class="open-popup shopfav" ><img src="images/icons/black/love.png" alt="" title="" data-bind="attr: {id: likeButtonId}"/></span>
+            </div>
+            </li> 
+
+              
+          </ul>
+          
+              <div class="shop_pagination">
+              <a href="shop.html" class="prev_shop">PREV PAGE</a>
+              <span class="shop_pagenr">1/37</span>
+              <a href="shop-page2.html" class="next_shop">NEXT PAGE</a>
+              <br />
+              <br />
+              <br />
+              <br />
+              </div>
+          
+              
+          
+          </div>
+          
+  </div>
+
+
+
+
+
+
+  <!--       NAVBAR       -->
+  <div class="swiper-container-toolbar swiper-toolbar" style="background-color:black;">
+    <div class="swiper-pagination-toolbar"></div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide toolbar-icon">
+      <span class="toolbar-icon-span" id="toolbarHome"><img src="images/icons/white/categories.png" style="filter: contrast(0%);"alt="" title=""/></span>
+      <span class="toolbar-icon-span" id="toolbarSearch"><img src="images/icons/white/search.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/love.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/photos.png" alt="" title="" /></span>
+      <span class="toolbar-icon-span"><img src="images/icons/white/contact.png" alt="" title="" /></span>
+      </div> 
+      </div>
+  </div>
+      
+      
+
+
+
+          </div>
+        </div>  
+    </div>
+  </div>
+</div>
+
+    
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB0p2lalH4H-gxCUY_hmJi4kh-01MwoLqs",
+    authDomain: "barcrawlv01.firebaseapp.com",
+    databaseURL: "https://barcrawlv01.firebaseio.com",
+    projectId: "barcrawlv01",
+    storageBucket: "barcrawlv01.appspot.com",
+    messagingSenderId: "742879583749"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+<script type='application/javascript' src='./js/fastclick.js'></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.validate.min.js" ></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/jquery.custom.js"></script>
+<script type ="module" src="CustomJS/index.js"></script>
+  </body>
+</html>
